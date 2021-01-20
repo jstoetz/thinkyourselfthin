@@ -7,3 +7,6 @@
 #
 layout: home
 ---
+
+<h2>COMING SOON</h2>
+<h3>Think Yourself Thin | The Mind-Body Connection When Losing Weight</h3>
