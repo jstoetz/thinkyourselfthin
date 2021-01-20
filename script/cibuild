@@ -1,19 +1,15 @@
-#!/usr/bin/env bash
-
-script/branding
+#!/bin/sh
 
 set -e
 
-if [[ -z "$TEST_SUITE" ]]
-then
-  script/fmt
-  script/test ci
-  script/cucumber
-  script/default-site
-elif [[ -x "script/$TEST_SUITE" ]]
-then
-  script/$TEST_SUITE
+script/build
+
+if test -e "./_site/index.html";then
+  echo "It builds!"
+  rm -Rf _site
 else
-  echo "Unknown test suite."
+  echo "Huh. That's odd. The example site doesn't seem to build."
   exit 1
 fi
+
+gem build minima.gemspec

@@ -1,4 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-script/branding
-bundle install -j8
+set -e
+
+gem install bundler
+bundle install
